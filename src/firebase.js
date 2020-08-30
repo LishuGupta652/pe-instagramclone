@@ -1,3 +1,5 @@
+import firebase from 'firebase';
+
 const firebaseConfig = {
   apiKey: "AIzaSyBj0XNwaPZhT7-b3M1sgexQB5tmv_UXOmU",
   authDomain: "instagramclonecosmos.firebaseapp.com",
@@ -8,9 +10,8 @@ const firebaseConfig = {
   appId: "1:27719337171:web:22d22caec9665dbb8c0026"
 };
 
-import firebase from 'firebase';
 
-const firebaseApp = firebase.initializeApp({firebaseConfig});
+const firebaseApp = firebase.initializeApp(firebaseConfig   );
 const db = firebase.firestore();
 const auth = firebase.auth();
 const storage = firebase.storage();

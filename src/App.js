@@ -132,7 +132,7 @@ function App() {
                 <Input placeholder="email" type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
                 <Input placeholder="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
                 <br />
-                <Button type="submit" onClick={signin}>Sign up</Button>
+                <Button type="submit" onClick={signin}>Sign In</Button>
                 </div>
             </form>
         </Modal>

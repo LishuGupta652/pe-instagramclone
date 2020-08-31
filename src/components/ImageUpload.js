@@ -63,7 +63,9 @@ function ImageUpload({username}) {
 
     return (
         <div className="imageUpload"> 
-            <progress value={progress} max="100" />
+      
+            <progress value={progress} max="100" className="imageUpload__progress" class="python">
+            </progress>
             <input type='text' placeholder="Enter a caption..." onChange={e => setCaption(e.target.value)} value={caption} />
             <input type='file' onChange={handleChange} />
             <Button className='imageUpload_button' onClick={handleUpload}>Upload</Button>

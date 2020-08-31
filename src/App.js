@@ -141,31 +141,36 @@ function App() {
        {/* Header */}
         <div className="app__header">
             <img className="app__headerImage" src="http://2.bp.blogspot.com/-4pBaE9sDqjg/UYNzlT_tL9I/AAAAAAAAZck/PhzqPJx3le8/s1600/Instragram+logo.png" alt="logo" />
+               { user ? (
+                <Button onClick={() => auth.signOut()}>Log out</Button>
+                ) : (
+                    <div className="app_loginContainer">
+                        <Button onClick={() => setOpenSignIn(true)}>Login</Button>
+                        <Button onClick={() => setOpen(true)}>Sign up</Button>
+                    </div>
+                )
+                }
         </div>
 
-        { user ? (
-            <Button onClick={() => auth.signOut()}>Log out</Button>
-            ) : (
-                <div className="app_loginContainer">
-                    <Button onClick={() => setOpenSignIn(true)}>Login</Button>
-                    <Button onClick={() => setOpen(true)}>Sign up</Button>
-                </div>
-            )
-        }
+     
 
           {user?.displayName ? (
             <ImageUpload username={user.displayName}/>
         ) : ( 
-        <h3>Sorry you need to Login </h3>
+        <h3 style={{padding: "20px"}}>Sorry you need to Login </h3>
         )}
 
 
-        <div className="posts">
+        <div className="app__posts">
+          
+
             {posts.map(({id, post}) => (
-            <Post key={id} photo={post.photo} username={post.username} caption={post.caption} imageUrl={post.imageUrl}/>
-            )
-            )}
+                <Post key={id} postId={id} user={user} photo={post.photo} username={post.username} caption={post.caption} imageUrl={post.imageUrl}/>
+                )
+                )}
+           
         </div>
+     
     </div>
   );
 }

@@ -7,15 +7,25 @@
     padding: 20px;
     background-color: white;
     border-bottom: 1px solid lightgray;
-
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1;
 }
 .app__headerImage {
-    width: 100px;
+    width: 80px;
+    object-fit: contain;
 }
 
-.app_signup {
+.app__signup {
     display: flex;
     flex-direction: column;
     text-align: center;
     width: 100%;
 }
+.app__posts {
+    padding: 20px;
+    margin: 0 auto;
+}
+
